@@ -659,10 +659,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieCowboy
       objectReference: {fileID: 0}
-    - target: {fileID: 1269355633611133959, guid: 0320198b744eb6e4bbcb713defeaad06, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1269355633611133964, guid: 0320198b744eb6e4bbcb713defeaad06, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -707,8 +703,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1269355633611133960, guid: 0320198b744eb6e4bbcb713defeaad06, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0320198b744eb6e4bbcb713defeaad06, type: 3}
 --- !u!1001 &1943552983
 PrefabInstance:
@@ -772,27 +767,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2396833403699234568, guid: 63d075ebe66870646a9b2d42ed49588e, type: 3}
   m_PrefabInstance: {fileID: 2396833404914817756}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2056942842 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1269355633611133959, guid: 0320198b744eb6e4bbcb713defeaad06, type: 3}
-  m_PrefabInstance: {fileID: 1505096174}
-  m_PrefabAsset: {fileID: 0}
---- !u!70 &2056942843
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056942842}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 2.9753258, y: 25.329676}
-  m_Size: {x: 23.465609, y: 50.65935}
-  m_Direction: 0
 --- !u!1 &2101112373
 GameObject:
   m_ObjectHideFlags: 3
@@ -940,6 +914,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2396833403699234568, guid: 63d075ebe66870646a9b2d42ed49588e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396833403699234569, guid: 63d075ebe66870646a9b2d42ed49588e, type: 3}
+      propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2396833403699234573, guid: 63d075ebe66870646a9b2d42ed49588e, type: 3}
