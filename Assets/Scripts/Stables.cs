@@ -23,8 +23,17 @@ public class Stables : MonoBehaviour
         stableSpawner = FindObjectOfType<StableSpawner>();
         player = FindObjectOfType<PlayerMove>();
         maxSpawnDist = stableSpawner.maxSpawnDist;
-        //DespawnIfTooCloseToOtherStable();
+        PickDirection();
+    }
 
+    private void PickDirection()
+    {
+        var isRight = Random.Range(0,2);
+        if (isRight == 0)
+        {
+            var newX = -transform.localScale.x;
+            transform.localScale = new Vector3(newX, transform.localScale.y, transform.localScale.z);
+        }
     }
 
     // Update is called once per frame
