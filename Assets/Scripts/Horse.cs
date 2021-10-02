@@ -6,13 +6,16 @@ public class Horse : MonoBehaviour
 {
     //config params
     [SerializeField] float moveSpeed = 6f;
+    [SerializeField] float despawnDistance = 50f;
 
     //cached refs
     int runDir;
+    PlayerMove player;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<PlayerMove>();
         runDir = Random.Range(0, 2);
         if(runDir == 1)
         {
@@ -31,6 +34,17 @@ public class Horse : MonoBehaviour
         else
         {
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+        }
+        DespawnFromRange();
+    }
+
+    public void DespawnFromRange()
+    {
+        var xToPlayer = Mathf.Abs(player.transform.position.x - transform.position.x);
+        var yToPlayer = Mathf.Abs(player.transform.position.y - transform.position.y);
+        if (xToPlayer >= despawnDistance || yToPlayer >= despawnDistance)
+        {
+            Destroy(gameObject);
         }
     }
 }
