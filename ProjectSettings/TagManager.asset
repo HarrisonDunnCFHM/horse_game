@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Stables
+    uniqueID: 1067913749
+    locked: 0
+  - name: Cowboy
+    uniqueID: 1221531075
+    locked: 0
+  - name: Player
+    uniqueID: 1097676187
+    locked: 0
+  - name: UI
+    uniqueID: 2962886395
+    locked: 0

@@ -25,6 +25,7 @@ public class ZombieCowboy : MonoBehaviour
     void Update()
     {
         ChasePlayer();
+        FlipSprite();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -40,6 +41,17 @@ public class ZombieCowboy : MonoBehaviour
         if(scoreKeeper.score <= 0) { return; }
         var playerPos = player.transform.position;
         float scoreMult = (Mathf.Log(scoreKeeper.score, speedGrowth)) + 1;
-        transform.position = Vector2.MoveTowards(transform.position, playerPos, moveSpeed * Time.deltaTime * scoreMult);
+        transform.position = Vector3.MoveTowards(transform.position, playerPos, moveSpeed * Time.deltaTime * scoreMult);
+    }
+
+    private void FlipSprite()
+    {
+        var dir = player.transform.position.x - transform.position.x;
+        if (dir == 0) { return; }
+        if (Mathf.Sign(dir) == Mathf.Sign(transform.localScale.x))
+        {
+            var newDir = transform.localScale.x * -1;
+            transform.localScale = new Vector3(newDir, transform.localScale.y, transform.localScale.z);
+        }
     }
 }
