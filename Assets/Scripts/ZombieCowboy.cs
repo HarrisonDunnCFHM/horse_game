@@ -12,13 +12,16 @@ public class ZombieCowboy : MonoBehaviour
     //cached refs
     PlayerMove player;
     ScoreKeeper scoreKeeper;
-    
-    
+    PopOutMenu gameOverMenu;
+    bool gameOver = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerMove>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        gameOverMenu = FindObjectOfType<PopOutMenu>();
     }
 
     // Update is called once per frame
@@ -32,7 +35,15 @@ public class ZombieCowboy : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerMove>())
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (gameOver) { return; }
+            gameOver = true;
+            Debug.Log("game over!");
+            gameOverMenu.ToggleMenu();
+            PlayerPrefs.SetInt("lastscore", scoreKeeper.score);
+            if(scoreKeeper.score > PlayerPrefs.GetInt("highscore"))
+            {
+                PlayerPrefs.SetInt("highscore", scoreKeeper.score);
+            }
         }
     }
 

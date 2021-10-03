@@ -7,6 +7,8 @@ public class ScoreKeeper : MonoBehaviour
 {
     //config params
     [SerializeField] Text scoreText;
+    [SerializeField] Text finalScoreText;
+    [SerializeField] Text personalBest;
 
     //cached ref
     public int score;
@@ -16,6 +18,8 @@ public class ScoreKeeper : MonoBehaviour
     {
         score = 0;
         scoreText.text = "HORSES FREED: " + score.ToString();
+        finalScoreText.text = "HORSES FREED: " + score.ToString();
+        personalBest.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,9 +28,15 @@ public class ScoreKeeper : MonoBehaviour
         
     }
 
+    
     public void IncreaseScore()
     {
         score++;
         scoreText.text = "HORSES FREED: " + score.ToString();
+        finalScoreText.text = "HORSES FREED: " + score.ToString();
+        if (score > PlayerPrefs.GetInt("highscore") && !personalBest.gameObject.activeSelf)
+        {
+            personalBest.gameObject.SetActive(true);
+        }
     }
 }

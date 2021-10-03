@@ -7,6 +7,7 @@ public class Horse : MonoBehaviour
     //config params
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float despawnDistance = 50f;
+    [SerializeField] AudioClip[] myAudioClips;
 
     //cached refs
     int runDir;
@@ -22,6 +23,13 @@ public class Horse : MonoBehaviour
             
             transform.localScale = new Vector2 (-transform.localScale.x,transform.localScale.y);
         }
+        PlayAudioClip();
+    }
+
+    private void PlayAudioClip()
+    {
+        int audioIndex = Random.Range(0,myAudioClips.Length);
+        AudioSource.PlayClipAtPoint(myAudioClips[audioIndex], Camera.main.transform.position, 1);
     }
 
     // Update is called once per frame
