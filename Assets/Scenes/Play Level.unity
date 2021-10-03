@@ -495,7 +495,7 @@ MonoBehaviour:
   myMenu: {fileID: 471575155}
   myHomePos: {x: 0, y: 700}
   myExtendedPos: {x: 0, y: 0}
-  moveSpeed: 1000
+  moveSpeed: 2000
   startingMenu: 0
   pausesMenu: 0
   menuHome: 1
