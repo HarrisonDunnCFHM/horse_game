@@ -7,19 +7,32 @@ public class PlayerMove : MonoBehaviour
     //config params
     [SerializeField] float moveSpeed = 5f;
 
+    //cached refs
+    Rigidbody2D myRigidBody;
+
     // Start is called before the first frame update
     void Start()
     {
         if (ZombieCowboy.gameOver) { ZombieCowboy.gameOver = false; }
-
+        myRigidBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (ZombieCowboy.gameOver) { return; }
-        PlayerMovement();
+        //PlayerMovement();
+        PlayerMovementFixed();
         FlipSprite();
+    }
+
+    private void PlayerMovementFixed()
+    {
+        float moveHorizontal = Input.GetAxisRaw("Horizontal") + transform.position.x;
+        float moveVertical = Input.GetAxisRaw("Vertical")  + transform.position.y;
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(moveHorizontal, moveVertical, transform.position.z), moveSpeed * Time.deltaTime);
+        //transform.position = new Vector3 (moveHorizontal, moveVertical, transform.position.z);
+        
     }
 
     private void PlayerMovement()
@@ -36,6 +49,7 @@ public class PlayerMove : MonoBehaviour
             var newY = transform.position.y + (moveSpeed * Time.deltaTime * dir);
             transform.position = new Vector3(transform.position.x, newY, transform.position.z);
         }
+
     }
 
     private void FlipSprite()
