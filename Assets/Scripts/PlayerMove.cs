@@ -10,12 +10,14 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (ZombieCowboy.gameOver) { ZombieCowboy.gameOver = false; }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (ZombieCowboy.gameOver) { return; }
         PlayerMovement();
         FlipSprite();
     }

@@ -13,7 +13,7 @@ public class ZombieCowboy : MonoBehaviour
     PlayerMove player;
     ScoreKeeper scoreKeeper;
     PopOutMenu gameOverMenu;
-    bool gameOver = false;
+    public static bool gameOver = false;
 
 
     // Start is called before the first frame update
@@ -27,6 +27,7 @@ public class ZombieCowboy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameOver) { return; }
         ChasePlayer();
         FlipSprite();
     }

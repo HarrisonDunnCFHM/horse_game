@@ -79,6 +79,7 @@ public class Stables : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        if (ZombieCowboy.gameOver) { return; }
         if (collision.gameObject.GetComponent<PlayerMove>())
         {
             switch(myUnlockKey)
