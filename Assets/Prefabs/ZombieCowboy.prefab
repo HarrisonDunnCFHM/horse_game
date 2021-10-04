@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   speedGrowth: 50
+  gameOverMenu: {fileID: 0}
 --- !u!50 &1269355633611133961
 Rigidbody2D:
   serializedVersion: 4

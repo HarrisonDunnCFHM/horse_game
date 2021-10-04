@@ -9,11 +9,14 @@ public class PlayerMove : MonoBehaviour
 
     //cached refs
     Rigidbody2D myRigidBody;
+    AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
         if (ZombieCowboy.gameOver) { ZombieCowboy.gameOver = false; }
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.ResetSliders();
         myRigidBody = GetComponent<Rigidbody2D>();
     }
 

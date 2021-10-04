@@ -19,11 +19,13 @@ public class PopOutMenu : MonoBehaviour
     Vector2 myTarget;
     public bool isExtending;
     public bool isRetracting;
+    bool extended;
 
     // Start is called before the first frame update
     void Start()
     {
         transform.localPosition = myHomePos;
+        extended = false;
         if (startingMenu) { ToggleMenu(); }
     }
 
@@ -31,6 +33,8 @@ public class PopOutMenu : MonoBehaviour
     void Update()
     {
         MenuPopOut(menuHome);
+        //if (CheckExtended()) { Time.timeScale = 0f; }
+        //else { Time.timeScale = 1f; }
     }
 
     private void MenuPopOut(MenuDirection myDirection)
@@ -161,6 +165,7 @@ public class PopOutMenu : MonoBehaviour
 
     public bool CheckExtended()
     {
+        if(isExtending || isRetracting) { return false; }
         if((Vector2)transform.localPosition == myExtendedPos) {
             return true; }
         else { return false; }

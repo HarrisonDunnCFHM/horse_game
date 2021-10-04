@@ -7,14 +7,14 @@ public class Horse : MonoBehaviour
     //config params
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float despawnDistance = 50f;
-    [SerializeField] public bool sillyMode;
+    [SerializeField] bool sillyMode;
     [SerializeField] AudioClip[] myAudioClips;
     [SerializeField] AudioClip[] mySillyClips;
 
     //cached refs
     int runDir;
     PlayerMove player;
-    HorseNoise horseNoise;
+    AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,8 @@ public class Horse : MonoBehaviour
             
             transform.localScale = new Vector2 (-transform.localScale.x,transform.localScale.y);
         }
+        sillyMode = AudioManager.sillyMode;
+        audioManager = FindObjectOfType<AudioManager>();
         PlayAudioClip();
     }
 
@@ -49,12 +51,12 @@ public class Horse : MonoBehaviour
         if (!sillyMode)
         {
             int audioIndex = Random.Range(0, myAudioClips.Length);
-            AudioSource.PlayClipAtPoint(myAudioClips[audioIndex], Camera.main.transform.position, 1);
+            AudioSource.PlayClipAtPoint(myAudioClips[audioIndex], Camera.main.transform.position, audioManager.effectsVolume);
         }
         else
         {
             int audioIndex = Random.Range(0, mySillyClips.Length);
-            AudioSource.PlayClipAtPoint(mySillyClips[audioIndex], Camera.main.transform.position, 1);
+            AudioSource.PlayClipAtPoint(mySillyClips[audioIndex], Camera.main.transform.position, audioManager.effectsVolume);
         }
     }
     public void DespawnFromRange()
