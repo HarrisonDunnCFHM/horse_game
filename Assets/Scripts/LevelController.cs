@@ -30,4 +30,8 @@ public class LevelController : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+    public void GoToSoundBoard()
+    {
+        SceneManager.LoadScene(4);
+    }
 }

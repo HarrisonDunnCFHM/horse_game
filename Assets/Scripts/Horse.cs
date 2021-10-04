@@ -56,7 +56,7 @@ public class Horse : MonoBehaviour
         else
         {
             int audioIndex = Random.Range(0, mySillyClips.Length);
-            AudioSource.PlayClipAtPoint(mySillyClips[audioIndex], Camera.main.transform.position, audioManager.effectsVolume * audioManager.masterVolume);
+            AudioSource.PlayClipAtPoint(mySillyClips[audioIndex], Camera.main.transform.position, audioManager.effectsVolume * audioManager.masterVolume * 2);
         }
     }
     public void DespawnFromRange()

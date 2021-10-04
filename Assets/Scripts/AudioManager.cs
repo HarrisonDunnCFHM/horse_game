@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
     Slider effectsVolSlider;
     Slider musicVolSlider;
     Toggle sillyToggle;
+    float mutedVol;
 
     private void Awake()
     {
@@ -47,6 +48,8 @@ public class AudioManager : MonoBehaviour
         sillyMode = sillyToggle.isOn;
         myAudioSource.volume = musicVolume * masterVolume;
     }
+
+   
     public void ResetSliders()
     {
         var menus = FindObjectsOfType<PopOutMenu>();

@@ -18,6 +18,7 @@ public class PlayerMove : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.ResetSliders();
         myRigidBody = GetComponent<Rigidbody2D>();
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
