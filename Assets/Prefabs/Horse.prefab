@@ -112,6 +112,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3bd3440744785d446a4ceaab38d035eb, type: 3}
   - {fileID: 8300000, guid: 2016b316e0e39c2499de465d57e8e96e, type: 3}
   - {fileID: 8300000, guid: 40c37b23281033c46a1ca7be14a5dfe9, type: 3}
+  - {fileID: 8300000, guid: 6d35dbe4d6e8f1f40b8028105a02cc45, type: 3}
   mySillyClips:
   - {fileID: 8300000, guid: 40843c763de52304e9f278f626ca00ab, type: 3}
   - {fileID: 8300000, guid: 5db3840c096bdbf4a8b6a7915029f0df, type: 3}

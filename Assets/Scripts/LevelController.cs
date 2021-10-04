@@ -26,4 +26,8 @@ public class LevelController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
