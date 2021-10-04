@@ -8,7 +8,7 @@ public class ZombieCowboy : MonoBehaviour
     //config params
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float speedGrowth = 0.01f;
-    [SerializeField] PopOutMenu gameOverMenu;
+    PopOutMenu gameOverMenu;
 
     //cached refs
     PlayerMove player;
@@ -21,6 +21,15 @@ public class ZombieCowboy : MonoBehaviour
     {
         player = FindObjectOfType<PlayerMove>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        var menus = FindObjectsOfType<PopOutMenu>();
+        foreach (PopOutMenu menu in menus)
+        {
+            if (menu.name == "Game Over Menu")
+            {
+                gameOverMenu = menu;
+            }
+        }
+
     }
 
     // Update is called once per frame
@@ -30,6 +39,8 @@ public class ZombieCowboy : MonoBehaviour
         ChasePlayer();
         FlipSprite();
     }
+
+  
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

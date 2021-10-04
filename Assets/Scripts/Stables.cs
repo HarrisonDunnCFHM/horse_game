@@ -13,7 +13,7 @@ public class Stables : MonoBehaviour
     
     //cached references
     ScoreKeeper scoreKeeper;
-    StableSpawner stableSpawner;
+    Spawner stableSpawner;
     PlayerMove player;
     float maxSpawnDist;
     List<Stables> otherStables;
@@ -25,7 +25,7 @@ public class Stables : MonoBehaviour
     void Start()
     {
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
-        stableSpawner = FindObjectOfType<StableSpawner>();
+        stableSpawner = FindObjectOfType<Spawner>();
         player = FindObjectOfType<PlayerMove>();
         maxSpawnDist = stableSpawner.maxSpawnDist;
         mySprite = GetComponent<SpriteRenderer>().sprite;
