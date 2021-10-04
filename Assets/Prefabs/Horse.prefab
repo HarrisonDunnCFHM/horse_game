@@ -99,9 +99,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   despawnDistance: 50
+  sillyMode: 0
   myAudioClips:
-  - {fileID: 8300000, guid: 94e77cb11a513c9448cca4e0a615af13, type: 3}
-  - {fileID: 8300000, guid: f8224f37de6635d4c906d1802aa1d446, type: 3}
+  - {fileID: 8300000, guid: 3505532a68e6f104db7d9b96a5f42d64, type: 3}
+  - {fileID: 8300000, guid: d1ad2e5321c354247a9607609c768849, type: 3}
+  - {fileID: 8300000, guid: e847ed05d645dc44f8771c415d79be58, type: 3}
+  - {fileID: 8300000, guid: c233560b55765c14893ed2e6d265f66a, type: 3}
+  - {fileID: 8300000, guid: 5a31441e351412f4c9c0d0654f1a174d, type: 3}
+  - {fileID: 8300000, guid: ae27567777c8d274794831c0efede3b0, type: 3}
+  - {fileID: 8300000, guid: 4079562cca56d8b49b48df8c18d40ea3, type: 3}
+  - {fileID: 8300000, guid: b1450b76b335077479d50ff664557e60, type: 3}
+  - {fileID: 8300000, guid: 3bd3440744785d446a4ceaab38d035eb, type: 3}
+  - {fileID: 8300000, guid: 2016b316e0e39c2499de465d57e8e96e, type: 3}
+  - {fileID: 8300000, guid: 40c37b23281033c46a1ca7be14a5dfe9, type: 3}
+  mySillyClips:
+  - {fileID: 8300000, guid: 40843c763de52304e9f278f626ca00ab, type: 3}
+  - {fileID: 8300000, guid: 5db3840c096bdbf4a8b6a7915029f0df, type: 3}
+  - {fileID: 8300000, guid: 65ad45de8197740429e683436b47d926, type: 3}
+  - {fileID: 8300000, guid: a15a47d9e07d8374a89898cd87a33451, type: 3}
+  - {fileID: 8300000, guid: 924f5c527e79efd4c942317f1f59445c, type: 3}
+  - {fileID: 8300000, guid: 0781e658b42b9284e9ffa36a552632b7, type: 3}
+  - {fileID: 8300000, guid: 2ce8a8f585274934eba01f75f8b298c2, type: 3}
+  - {fileID: 8300000, guid: 7819eedff14f96645b4a85c3118c869c, type: 3}
+  - {fileID: 8300000, guid: b8381ae11cbba464cbaaa472730843ae, type: 3}
+  - {fileID: 8300000, guid: 63ce9fd14213eca48a43492b1435ced3, type: 3}
+  - {fileID: 8300000, guid: b42a48cef6aa49448bd6fb5989ba786a, type: 3}
+  - {fileID: 8300000, guid: 064d1a431de2a8e45a9362c3bc651398, type: 3}
+  - {fileID: 8300000, guid: b8389c648717c6c4fbd4407c4fc6d145, type: 3}
+  - {fileID: 8300000, guid: 6a1030bfb26ba08459d5482803d0b54a, type: 3}
+  - {fileID: 8300000, guid: 488b7423885559f4b889163a76b66d25, type: 3}
+  - {fileID: 8300000, guid: 231eb787247099d44b07fdd1f5675a28, type: 3}
+  - {fileID: 8300000, guid: fdfd0ff59d99ef9488dea4af47e8ce7e, type: 3}
+  - {fileID: 8300000, guid: 559477a140541604a9a918232f8539e8, type: 3}
+  - {fileID: 8300000, guid: 70d84a387d71c8c4d9bb2d42726d35da, type: 3}
 --- !u!114 &7706661068090232445
 MonoBehaviour:
   m_ObjectHideFlags: 0

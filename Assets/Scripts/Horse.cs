@@ -7,11 +7,14 @@ public class Horse : MonoBehaviour
     //config params
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float despawnDistance = 50f;
+    [SerializeField] public bool sillyMode;
     [SerializeField] AudioClip[] myAudioClips;
+    [SerializeField] AudioClip[] mySillyClips;
 
     //cached refs
     int runDir;
     PlayerMove player;
+    HorseNoise horseNoise;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +29,7 @@ public class Horse : MonoBehaviour
         PlayAudioClip();
     }
 
-    private void PlayAudioClip()
-    {
-        int audioIndex = Random.Range(0,myAudioClips.Length);
-        AudioSource.PlayClipAtPoint(myAudioClips[audioIndex], Camera.main.transform.position, 1);
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -45,7 +44,19 @@ public class Horse : MonoBehaviour
         }
         DespawnFromRange();
     }
-
+    public void PlayAudioClip()
+    {
+        if (!sillyMode)
+        {
+            int audioIndex = Random.Range(0, myAudioClips.Length);
+            AudioSource.PlayClipAtPoint(myAudioClips[audioIndex], Camera.main.transform.position, 1);
+        }
+        else
+        {
+            int audioIndex = Random.Range(0, mySillyClips.Length);
+            AudioSource.PlayClipAtPoint(mySillyClips[audioIndex], Camera.main.transform.position, 1);
+        }
+    }
     public void DespawnFromRange()
     {
         var xToPlayer = Mathf.Abs(player.transform.position.x - transform.position.x);
